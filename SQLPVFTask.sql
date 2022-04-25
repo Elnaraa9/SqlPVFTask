@@ -93,15 +93,17 @@ WHERE s.TotalSpendings<@cost
 
 EXEC GetCustomerSpendings 500 
 
-CREATE FUNCTION GetCustomerCount (@spendings int)
+CREATE FUNCTION GetCustomerCount (@id int)
 RETURNS INT 
 AS
 BEGIN
 	DECLARE @count int
-	SELECT @count=COUNT   FROM  AS 
-	WHERE 
-	RETURN 
+	SELECT @count=COUNT(*) FROM Customers
+	WHERE ID>@id
+	RETURN @count
 END
+
+SELECT [DBO].[GetCustomerCount](2)
 
 
 SELECT [DBO].[GetCustomerCount]()
