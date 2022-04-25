@@ -106,8 +106,6 @@ END
 SELECT [DBO].[GetCustomerCount](2)
 
 
-SELECT [DBO].[GetCustomerCount]()
-
 CREATE TRIGGER CustomersInsertTrigger
 ON Customers
 AFTER INSERT
